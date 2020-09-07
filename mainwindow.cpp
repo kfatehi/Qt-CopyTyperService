@@ -47,6 +47,7 @@ void MainWindow::on_pushButton_clicked()
 
 
             writeData.append(QApplication::clipboard()->text());
+            writeData.append(QChar(0));
 
             const qint64 bytesWritten = serialPort.write(writeData);
 
