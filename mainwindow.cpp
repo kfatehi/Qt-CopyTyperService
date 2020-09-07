@@ -72,6 +72,11 @@ void MainWindow::on_pushButton_clicked()
                               .arg(serialPortName)
                            << "\n";
             serialPort.close();
+
+            // on mac it sees two which are the same real device
+            // and therefore loads the eeprom w/ double the data.
+            // as a fix, make sure to break the loop here.
+            break;
         }
     }
 }
